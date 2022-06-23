@@ -172,6 +172,20 @@ public class Timer implements Serializable {
 		return unit.convert(countdownTime -
 				(System.currentTimeMillis() - startTime), TimeUnit.MILLISECONDS);
 	}
+	
+	/**
+	 * Resets the timer, without changing the countdown time
+	 * 
+	 * @return this, for chaining
+	 */
+	public Timer reset() {
+		if(!isRunning())
+			throw new IllegalStateException("Timer is not running!");
+
+		startTime = System.currentTimeMillis();
+
+		return this;
+	}
 
 	/**
 	 * Gets whether the timer is in the process of stopping or not
