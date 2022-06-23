@@ -145,7 +145,15 @@ public class Timer implements Serializable {
 
 		return this;
 	}
-
+	
+	/**
+	 * Gets whether the timer is in the process of stopping or not
+	 *
+	 * @return whether the timer is stopping or not
+	 */
+	public boolean isStopping() {
+		return isStopping;
+	}
 
 	/**
 	 * Tells whether the timer is done counting down or not.
